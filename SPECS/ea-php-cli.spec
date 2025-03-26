@@ -5,7 +5,7 @@
 Name:           %{ns_name}-%{upstream_name}
 Version:        1.0.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4566 for more details
-%define release_prefix 11
+%define release_prefix 12
 Release: %{release_prefix}%{?dist}.cpanel
 Vendor:         cPanel, Inc.
 Summary:        Execute PHP scripts with the configured php version.
@@ -18,6 +18,7 @@ Source0:        php-cgi.pl
 Source1:        php-cli.pl
 Source2:        php-lsapi.pl
 Source3:        ea_php_cli.pm
+Source4:        pear.sh
 
 %description
 CLI and CGI PHP wrappers to dispatch to the user's configured version of php.
@@ -40,6 +41,7 @@ cp -f %SOURCE1 %{buildroot}/usr/local/bin/php
 cp -f %SOURCE2 %{buildroot}/usr/bin/lsphp
 cp -f %SOURCE2 %{buildroot}/usr/local/bin/lsphp
 cp -f %SOURCE3 %{buildroot}/var/cpanel/ea4/ea_php_cli.pm
+cp -f %SOURCE4 %{buildroot}/usr/local/bin/pear
 
 %clean
 rm -rf %{buildroot}
@@ -48,12 +50,16 @@ rm -rf %{buildroot}
 %attr(0755,root,root) /usr/bin/php
 %attr(0755,root,root) /usr/local/bin/php
 %attr(0644,root,root) /var/cpanel/ea4/ea_php_cli.pm
+%attr(0655,root,root) /usr/local/bin/pear
 
 %files lsphp
 %attr(0755,root,root) /usr/local/bin/lsphp
 %attr(0755,root,root) /usr/bin/lsphp
 
 %changelog
+* Wed Mar 26 2025 Julian Brown <julian.brown@webpros.com> - 1.0.0-12
+- ZC-12720: Add a placebo version of /usr/local/bin/pear
+
 * Mon Sep 11 2023 Sloane Bernstein <sloane@cpanel.net> - 1.0.0-11
 - ZC-11159: Invalidate/don't use cache if environment variable is passed
 
