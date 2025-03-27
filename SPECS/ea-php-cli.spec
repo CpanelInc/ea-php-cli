@@ -50,7 +50,7 @@ rm -rf %{buildroot}
 %attr(0755,root,root) /usr/bin/php
 %attr(0755,root,root) /usr/local/bin/php
 %attr(0644,root,root) /var/cpanel/ea4/ea_php_cli.pm
-%attr(0655,root,root) /usr/local/bin/pear
+%attr(0755,root,root) /usr/local/bin/pear
 
 %files lsphp
 %attr(0755,root,root) /usr/local/bin/lsphp
