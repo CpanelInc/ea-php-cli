@@ -18,7 +18,7 @@ Source0:        php-cgi.pl
 Source1:        php-cli.pl
 Source2:        php-lsapi.pl
 Source3:        ea_php_cli.pm
-Source4:        pear.sh
+Source4:        pear.pl
 
 %description
 CLI and CGI PHP wrappers to dispatch to the user's configured version of php.
