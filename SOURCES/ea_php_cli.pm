@@ -1,8 +1,8 @@
 #!/usr/local/cpanel/3rdparty/bin/perl
-# cpanel - ea_php_cli.pm                           Copyright 2019 cPanel, L.L.C.
-#                                                           All rights Reserved.
+#                                      Copyright 2025 WebPros International, LLC
+#                                                           All rights reserved.
 # copyright@cpanel.net                                         http://cpanel.net
-# This code is subject to the cPanel license. Unauthorized copying is prohibited
+# This code is subject to the cPanel license. Unauthorized copying is prohibited.
 
 package ea_php_cli;
 
@@ -17,6 +17,7 @@ $EUID = $> if ${^GLOBAL_PHASE} eq "START";
 
 my %types = (
     php       => 'CLI',
+    pear       => 'CLI',
     'php-cgi' => 'CGI',
     lsphp     => 'LSAPI',
 );
